@@ -54,7 +54,7 @@ def handle_text(message):
         user_message = message.text
 
         if user_id not in user_sessions:
-            user_sessions[user_id] model.start_chat(history=[])
+            user_sessions[user_id] = model.start_chat(history=[])
         
         chat_session = user_sessions[user_id]
         response = chat_session.send_message(user_message)
